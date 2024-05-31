@@ -1,0 +1,17 @@
+<main>
+  <h1 class="home-header">releases</h1>
+  @if (list) {
+  <div class="movies-container">
+    @for (item of list;track list){
+    <app-movie [details]="item"></app-movie>
+    }
+  </div>
+  }
+  <div class="form">
+    <h1 class="form-header">Join the mailing list to stay in touch</h1>
+    <form>
+      <input type="text" name="email" #email id="email" />
+      <input type="submit" value="send" id="submit" />
+    </form>
+  </div>
+</main>
