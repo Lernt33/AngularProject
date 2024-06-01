@@ -10,7 +10,15 @@
   <div class="form">
     <h1 class="form-header">Join the mailing list to stay in touch</h1>
     <form>
-      <input type="text" name="email" #email id="email" />
+      <input
+        type="text"
+        placeholder="Enter your email here*"
+        name="email"
+        required
+        #email
+        id="email"
+        pattern="^.+@.+\.[a-zA-Z]{2,63}$"
+      />
       <input type="submit" value="send" id="submit" />
     </form>
   </div>
