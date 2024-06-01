@@ -2,19 +2,40 @@
 .home-header {
   font-family: $primary-font;
   font-size: 200px;
+  @media screen and (max-width: 1280px) {
+      font-size: 128px;
+  }
+  @media screen and (max-width: 850px) {
+    font-size: 15vw;
+  }
   color: rgb(224, 222, 222);
   font-weight: 1000;
   text-align: center;
+  margin-top: 0;
 }
 .movies-container {
+  margin: auto;
+  max-width: calc(100% - 160px);
   width: 100%;
   transform: translate(0, -17%);
-  display: grid;
-  width: 100%;
+  @media screen and (max-width: 1640px) {
+    transform: translate(0, -15%);
+  }
+  @media screen and (max-width: 1251px) {
+    transform: translate(0, -8%);
+  }
+  @media screen and (max-width: 871px) {
+    transform: translate(0, -16vw);
+  }
+  display: flex;
+  flex-wrap: wrap;
   height: 100%;
-  grid-template-columns: repeat(4, auto);
   gap: 36px;
-  justify-content: center;
+
+  justify-content: space-between;
+  @media screen and (max-width: 871px) {
+      justify-content: center;
+  }
 }
 .form {
   display: flex;
@@ -28,21 +49,35 @@
     font-size: 40px;
     margin: 0;
     padding: 0;
+    text-align: center;
+    @media screen and (max-width: 870px) {
+      font-size: 32px;
+    }
+    @media screen and (max-width: 800px) {
+      font-size: 32px;
+    }
   }
   form {
     margin: 0;
     margin-bottom: 128px;
     padding: 0;
     display: flex;
+    max-width: 781px;
+    width: 100%;
     gap: 24px;
     box-sizing: border-box;
+    @media screen and (max-width: 870px) {
+      flex-direction: column;
+      align-items: center;
+    }
     input {
       margin-top: 16px;
       height: 43px;
       box-sizing: border-box;
     }
     #email {
-      width: 646px;
+      max-width: 646px;
+      width: calc(100% - 80px);
       padding-left: 12px;
       font-family: $primary-font;
       font-weight: 1000;
@@ -59,7 +94,7 @@
       }
     }
     #submit {
-      background-color: purple;
+      background-color: $purple-color;
       color: white;
       font-family: $primary-font;
       border: 0px;
@@ -67,6 +102,11 @@
       font-weight: 1000;
       padding: 8px 32px;
       box-sizing: border-box;
+      width: 100%;
+      max-width: 111px;
     }
   }
+}
+.wrong{
+  border: 4px solid red !important;
 }
