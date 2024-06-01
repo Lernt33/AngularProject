@@ -1,0 +1,8 @@
+<div
+  (mouseover)="mouseover($event)"
+  (mouseout)="mouseout($event)"
+  class="moviebox"
+>
+  <a #image><img [src]="details.poster" alt="" /></a>
+  <p #title>{{ details.name }}</p>
+</div>
