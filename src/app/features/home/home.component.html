@@ -3,23 +3,34 @@
   @if (list) {
   <div class="movies-container">
     @for (item of list;track list){
-  <app-movie [details]="item"></app-movie>
-  }
+    <app-movie [details]="item"></app-movie>
+    }
   </div>
   }
   <div class="form">
     <h1 class="form-header">Join the mailing list to stay in touch</h1>
-    <form>
+    <form #form="ngForm">
       <input
         type="text"
         placeholder="Enter your email here*"
         name="email"
         required
-        #email
         id="email"
-        pattern="^.+@.+\.[a-zA-Z]{2,63}$"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        autocomplete="off"
+        ngModel
+        #email="ngModel"
+        [class.wrong]="
+          email.control.touched == true && email.control.status == 'INVALID'
+        "
       />
-      <input type="submit" value="send" id="submit" />
+      <input
+        type="submit"
+        [class.disabled]="email.control.status == 'INVALID' || form.submitted"
+        (click)="onSubmit(form)"
+        value="send"
+        id="submit"
+      />
     </form>
   </div>
 </main>

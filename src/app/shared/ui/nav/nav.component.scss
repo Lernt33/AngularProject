@@ -8,7 +8,6 @@ h1 {
   margin: 0 0;
   padding: 0 0;
 
-
   .header {
     line-height: 24px;
     font-size: 40px;
@@ -41,17 +40,13 @@ h1 {
     }
 
     header {
-
       display: flex;
-
-
     }
 
     .net-nav {
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-
 
       .soc-networks {
         padding: 4px 0;
@@ -65,7 +60,6 @@ h1 {
         user-select: none;
         cursor: pointer;
       }
-
     }
 
     .main-navigation {
@@ -90,7 +84,6 @@ h1 {
         &:last-child {
           padding-left: 36px;
         }
-
       }
     }
   }
@@ -110,21 +103,20 @@ h1 {
     flex-direction: column;
     width: 100%;
 
-
     .sidebar {
       opacity: 0;
-      display: none;
+      // display: none;
       background-color: white;
       position: absolute;
       height: 100%;
       width: 100%;
       z-index: 2;
       transform: translate(-50%, -50%);
-      top: 50%;
+      top: -50%;
       left: 50%;
-      transition: opacity 0.3s, visibility 1s linear 0.3s;
-
-      ul{
+      transition: 0.3s all;
+      border-bottom: 2px solid #999997;
+      ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
@@ -132,12 +124,11 @@ h1 {
         top: 50%;
         left: 50%;
         transform: translate(-50%, +10%);
-
-        li{
+        li {
           margin-bottom: 16px;
           text-decoration: none;
-          a{
-            transition: 0.3s;
+          a {
+            transition: 0.3s all;
             font-family: $secondary-font;
             font-size: 30px;
           }
@@ -148,7 +139,8 @@ h1 {
       opacity: 1;
       display: block;
       visibility: visible;
-      transition: opacity 0.3s, visibility 1s
+      top: 50%;
+      transition: 0.3s all;
     }
 
     .soc-networks2 {
@@ -163,7 +155,6 @@ h1 {
         height: 30px;
         user-select: none;
         cursor: pointer;
-
       }
     }
 
@@ -186,8 +177,6 @@ h1 {
           font-size: 40px;
         }
       }
-
-
     }
   }
 }
