@@ -7,6 +7,10 @@
   padding: 0;
   display: flex;
   justify-content: center;
+  margin-top: auto;
+  // position: fixed;
+  // left: 0;
+  // bottom: 0;
 }
 .footer-texts {
   width: calc(100% - 48vw);
@@ -28,7 +32,7 @@
 .purple {
   color: $purple-color !important;
 }
-.footer-text{
+.footer-text {
   color: white;
   font-family: $primary-font;
   font-size: 24px;
@@ -42,6 +46,6 @@
     font-size: 16px;
   }
 }
-.license{
+.license {
   color: #999997;
 }

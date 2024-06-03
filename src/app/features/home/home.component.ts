@@ -12,13 +12,12 @@ import { AlertService } from '@app-shared/services/alert.service';
   styleUrl: './home.component.scss',
   imports: [MovieComponent, FormsModule],
 })
-export class HomeComponent implements OnInit {
+export default class HomeComponent implements OnInit {
   alert = inject(AlertService);
   service = inject(HttpService);
   public list!: Array<movie>;
   ngOnInit(): void {
-    this.service.getFilms().subscribe((data: any) => (this.list = data));
-    console.log(this.list);
+    this.list = this.service.getFilms();
   }
   onSubmit(form: NgForm) {
     console.log(form);
