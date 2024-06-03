@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavComponent } from '@app-shared/ui/nav/nav.component';
-import { HomeComponent } from './features/home/home.component';
+
 import { FooterComponent } from './shared/ui/footer/footer.component';
 
 @Component({
@@ -9,7 +9,7 @@ import { FooterComponent } from './shared/ui/footer/footer.component';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, NavComponent, HomeComponent, FooterComponent],
+  imports: [RouterOutlet, NavComponent, FooterComponent],
 })
 export class AppComponent {
   title = 'FinalProject';
