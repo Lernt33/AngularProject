@@ -1,0 +1,74 @@
+@import "@app-style-var";
+
+
+.wrong{
+  border-bottom: 4px solid red !important ;
+}
+
+.contact-header {
+  font-family: $primary-font;
+  font-size: 200px;
+  @media screen and (max-width: 1280px) {
+    font-size: 128px;
+  }
+  @media screen and (max-width: 850px) {
+    font-size: 15vw;
+  }
+  color: rgb(224, 222, 222);
+  font-weight: 1000;
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 0px;
+}
+
+.container {
+  width: 50vw;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  .contact-paragraph {
+    font-size: 18px;
+    font-family: $secondary-font;
+  }
+  form{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    input,textarea{
+      font-weight: normal;
+      font-family: $secondary-font;
+      font-size: 18px;
+      border: 0px;
+      border-bottom: 2px solid #e0dede ;
+      height: 42px;
+      padding-left: 16px;
+      resize: none;
+      overflow: hidden;
+      &:focus-visible{
+        outline: none;
+      }
+    }
+    textarea{
+      height: 100px;
+    }
+    .form-name-email{
+      display: flex;
+      justify-content: space-between;
+      #email,#name{
+        width: 406px;
+      }
+    }
+    #submit{
+      font-family: $primary-font;
+      font-size: 18px;
+      background-color: transparent;
+      border: 0px;
+      transition: 0.4s ease all;
+      cursor: pointer;
+      margin-bottom: 32px;
+      &:hover{
+        color: $purple-color;
+      }
+    }
+  }
+}

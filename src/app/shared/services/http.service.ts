@@ -5,12 +5,29 @@ import { movie } from '@app-shared/interfaces';
   providedIn: 'root',
 })
 export class HttpService {
-  constructor(private httpService: HttpClient) {}
-  getFilms(): movie[] {
-    let result!: movie[];
+  response!:movie[]
+  constructor(private httpService: HttpClient) {
     this.httpService
       .get('https://www.cavea.ge/api/v1/session/main/list/')
-      .subscribe((data: any) => (result = data));
-    return result;
+      .subscribe((data: any) => (this.response = data));
   }
+  // getFilms(): movie[] {
+  //   let result!: movie[];
+  //   this.httpService
+  //     .get('https://www.cavea.ge/api/v1/session/main/list/')
+  //     .subscribe((data: any) => (result = data));
+  //   return result;
+  // }
+  getFilms(){
+    return this.response
+  }
+  getnames(){
+    const temp:any[] = []
+    this.response.forEach((el)=>{
+      temp.push([el.name,el.id])
+    })
+    // console.log(temp)
+    return temp
+  }
+
 }

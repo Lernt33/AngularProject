@@ -1,0 +1,24 @@
+<h1 class="contact-header">contact</h1>
+<div class="container">
+  <p class="contact-paragraph">Submitting demos? We accept links only (no physical copies or Mp3, please).</p>
+  <form #Form="ngForm" (ngSubmit)="onSubmit(Form)">
+    <div class="form-name-email">
+      <input
+        [class.wrong]="(name.control.touched == true && name.control.status == 'INVALID') && !Form.submitted"
+        #name="ngModel" ngModel name="name" maxlength="22" id="name" autocomplete="off" placeholder="Name" required>
+      <input
+        [class.wrong]="(email.control.touched == true && email.control.status == 'INVALID') && !Form.submitted"
+        #email="ngModel" ngModel name="email" maxlength="22" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+             autocomplete="off" placeholder="Email" required>
+    </div>
+    <input
+      [class.wrong]="(phone.control.touched == true && phone.control.status == 'INVALID') && !Form.submitted"
+      #phone="ngModel" ngModel name="phone" pattern="^\+995\s?(\d{3}\s?\d{3}|\d{2}\s?\d{2}\s?\d{2}\s?\d{2}|\d{3}\s?\d{2}\s?\d{2}\s?\d{2})$"
+           id="phone" autocomplete="off" placeholder="Phone" type="tel" required>
+    <textarea
+      [class.wrong]="(textarea.control.touched == true && textarea.control.status == 'INVALID') && !Form.submitted"
+      #textarea="ngModel" ngModel name="message" maxlength="340" rows="10" placeholder="Type your message here..."
+              required></textarea>
+    <input id="submit" type="submit" autocomplete="off" value="Submit">
+  </form>
+</div>

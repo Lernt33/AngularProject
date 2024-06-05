@@ -12,21 +12,22 @@
     <form #form="ngForm">
       <input
         type="text"
-        placeholder="Enter your email here*"
+        [placeholder]="placeholder"
         name="email"
         required
         id="email"
         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
         autocomplete="off"
         ngModel
+        [(ngModel)]="emailInput"
         #email="ngModel"
         [class.wrong]="
-          email.control.touched == true && email.control.status == 'INVALID'
+          (email.control.touched == true && email.control.status == 'INVALID') && !form.submitted
         "
       />
       <input
         type="submit"
-        [class.disabled]="email.control.status == 'INVALID' || form.submitted"
+        [class.disabled]="email.control.status == 'INVALID' || form.submitted "
         (click)="onSubmit(form)"
         value="send"
         id="submit"
