@@ -22,11 +22,7 @@ export class HttpService {
     });
     return temp;
   }
-  getFilmsbyId() {
-    const temp: any[] = [];
-    this.response.forEach((el) => {
-      temp.push([el.name, el.id]);
-    });
-    return temp;
+  getFilmsbyId(id: number) {
+    return this.response[id];
   }
 }
