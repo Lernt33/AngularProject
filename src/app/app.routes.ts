@@ -29,7 +29,7 @@ export const routes: Routes = [
   },
   {path: 'movie/:id',
     component: MoviePageComponent,
-    title:'movie'},
+    title:'Movie'},
   {
     path: 'cart',
     component:CartComponent,

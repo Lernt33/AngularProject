@@ -13,7 +13,7 @@
     </div>
     <input
       [class.wrong]="(phone.control.touched == true && phone.control.status == 'INVALID') && !Form.submitted"
-      #phone="ngModel" ngModel name="phone" pattern="^\+995\s?(\d{3}\s?\d{3}|\d{2}\s?\d{2}\s?\d{2}\s?\d{2}|\d{3}\s?\d{2}\s?\d{2}\s?\d{2})$"
+      #phone="ngModel" ngModel name="phone" pattern="995\d{9}"
            id="phone" autocomplete="off" placeholder="Phone" type="tel" required>
     <textarea
       [class.wrong]="(textarea.control.touched == true && textarea.control.status == 'INVALID') && !Form.submitted"
