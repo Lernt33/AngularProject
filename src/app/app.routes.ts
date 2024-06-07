@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
-import { Routes } from '@angular/router';
-import { HomeComponent } from './features/home/home.component';
+import {Component} from '@angular/core';
+import {Routes} from '@angular/router';
+import {HomeComponent} from './features/home/home.component';
+import {QuotesComponent} from "./features/quotes/quotes.component";
+import {MoviePageComponent} from "./features/movie-page/movie-page.component";
 
 export const routes: Routes = [
   {
@@ -15,15 +17,21 @@ export const routes: Routes = [
     title: 'Shorter',
   },
   {
+    path: 'quotes',
+    component: QuotesComponent,
+    title: 'Quotes'
+  },
+  {
     path: 'contact',
     loadComponent: () => import('./features/contact/contact.component'),
     title: 'Contact',
   },
+  {path: 'movie/:id', component: MoviePageComponent},
   {
     path: '404',
     loadComponent: () => import('./features/not-found/not-found.component'),
     title: 'Page not found',
   },
 
-  { path: '**', redirectTo: '404' },
+  {path: '**', redirectTo: '404'},
 ];

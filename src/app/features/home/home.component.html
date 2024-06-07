@@ -3,7 +3,7 @@
   @if (list) {
   <div class="movies-container">
     @for (item of list;track list){
-    <app-movie [details]="item"></app-movie>
+    <app-movie [id]="$index" [details]="item"></app-movie>
     }
   </div>
   }

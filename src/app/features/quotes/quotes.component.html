@@ -1,0 +1,10 @@
+<main>
+  <button class="quote-button" (click)="RandomQuote()">Add</button>
+  <div>  @for (item of QuotesToDisplay; track item) {
+    <app-quote-card
+      [quote]="item.quote"
+      [movieTitle]="item.movie_title"
+      [author]="item.author">
+    </app-quote-card>
+  }</div>
+</main>

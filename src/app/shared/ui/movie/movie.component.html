@@ -1,9 +1,11 @@
-<div
-  (mouseover)="mouseover($event)"
-  (mouseout)="mouseout($event)"
-  class="moviebox"
->
-  <a #image><img [src]="details.poster" alt="" /></a>
-  <p #title>{{ details.name }}</p>
-</div>
-<h1>{{details.name}}</h1>
+<a routerLink="movie/{{id}}">
+  <div
+    (mouseover)="mouseover($event)"
+    (mouseout)="mouseout($event)"
+    class="moviebox"
+  >
+    <a #image><img [src]="details.poster" alt=""/></a>
+    <p #title>{{ details.name }}</p>
+  </div>
+  <h1>{{ details.name }}</h1>
+</a>

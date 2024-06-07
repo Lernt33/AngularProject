@@ -22,3 +22,18 @@ interface MovieSession {
   id: string;
   imax: boolean;
 }
+
+export interface Quote {
+  id: number;
+  quote: string;
+  movie_title: string;
+  actor_name: string;
+  category: string;
+  publish_date: string;
+  source: string | null;
+  context: string | null;
+  rating: string;
+  language: string;
+  author: string;
+  author_bio: string;
+}
