@@ -3,5 +3,31 @@
 body {
   padding: 0;
   margin: 0;
+  animation: myAnimation 0.5s ease-out;
+  animation-iteration-count: 1;
 }
-
+@keyframes myAnimation {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes up {
+  0% {
+    transform: translate(0,-100%);
+  }
+  25%{
+    transform: translate(0,-75%);
+}
+  50% {
+    transform: translate(0,-50%);
+  }
+  100% {
+    transform: translate(0,0%);
+  }
+}

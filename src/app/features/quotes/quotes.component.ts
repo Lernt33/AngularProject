@@ -1,8 +1,8 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { HttpService } from "@app-shared/services/http.service";
-import { Quote } from "@app-shared/interfaces";
-import { AlertService } from "@app-shared/services/alert.service";
-import { QuoteCardComponent } from "@app-shared/ui/quote-card/quote-card.component";
+import {Component, inject, OnInit} from '@angular/core';
+import {HttpService} from "@app-shared/services/http.service";
+import {Quote} from "@app-shared/interfaces";
+import {AlertService} from "@app-shared/services/alert.service";
+import {QuoteCardComponent} from "@app-shared/ui/quote-card/quote-card.component";
 
 @Component({
   selector: 'app-quotes',
@@ -24,6 +24,11 @@ export class QuotesComponent implements OnInit {
     this.ALLquotes = this.service.getALLQuotes();
     this.loadQuotesFromLocalStorage();
     console.log(this.ALLquotes);
+  }
+
+  Reset() {
+    this.QuotesToDisplay = []
+    this.saveQuotesToLocalStorage()
   }
 
   RandomQuote() {

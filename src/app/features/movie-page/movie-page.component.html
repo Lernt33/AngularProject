@@ -1,39 +1,39 @@
-<!--@if (movie) {-->
-<!--  <div class="movie-container">-->
-<!--    <div class="movie-poster">-->
-<!--      <img [src]="movie.poster" alt="{{ movie.name }}"/>-->
-<!--    </div>-->
-<!--    <div class="movie-content">-->
-<!--      <div class="movie-details">-->
-<!--        <h1>{{ movie.name }}</h1>-->
-<!--        <div class="trailer">-->
-<!--          <iframe-->
-<!--            width="560"-->
-<!--            height="315"-->
-<!--            [src]="getEmbedLink(movie.trailer)"-->
-<!--            frameborder="0"-->
-<!--            allowfullscreen-->
-<!--          ></iframe>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--      <div class="cinemas">-->
-<!--        <div class="cinema">-->
-<!--&lt;!&ndash;          @for (cinema of movie.cinemas; track cinema) {&ndash;&gt;-->
-<!--&lt;!&ndash;            <h2>{{ cinema.name.geo }} ({{ cinema.name.eng }})</h2>&ndash;&gt;-->
-<!--&lt;!&ndash;            <div class="sessions-grid">&ndash;&gt;-->
-<!--&lt;!&ndash;              @for (session of cinema.sessions; track session) {&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="session-time">{{ session.title.split(' ')[0] }}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="session-lang">{{ session.lang }}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="session-price">{{ session.prices.join(' / ') }} ლ</div>&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="session-format">{{ session.is_3d ? '3D' : '2D' }} {{ session.imax ? 'IMAX' : '' }}</div>&ndash;&gt;-->
-<!--&lt;!&ndash;              }</div>&ndash;&gt;-->
-<!--&lt;!&ndash;          }&ndash;&gt;-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
-
-<!--}-->
-@if (movie){
-
+<h1 class="home-header">movie</h1>
+@if (movie) {
+  <div class="main-container">
+    <h1 class="title-header">{{ movie.name }}</h1>
+    <img [src]="movie.poster">
+    <iframe
+      width="560"
+      height="315"
+      [src]="getEmbedLink(movie.trailer)"
+      frameborder="0"
+      allowfullscreen
+    ></iframe>
+    <div class="tables">
+      @for (item of movie.cinemas; track item) {
+        <h3 class="title2-header">{{ item.name.eng }}</h3>
+        <table>
+          <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Language</th>
+            <th>Price</th>
+            <th>Reserve</th>
+          </tr>
+          @for (item2 of item.sessions; track item2) {
+            <tr>
+              <td>{{ item2.id.split('/')[1] | date}}</td>
+              <td>{{ item2.id.split('/')[2] }}</td>
+              <td>{{ item2.lang }}</td>
+              <td>{{ item2.prices[0] }}ლ / {{ item2.prices[1] }}ლ</td>
+              <td>
+                <button (click)="OnReserveClick(item2,movie.name)">Reserve</button>
+              </td>
+            </tr>
+          }
+        </table>
+      }
+    </div>
+  </div>
 }

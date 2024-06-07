@@ -12,6 +12,8 @@
   font-weight: 1000;
   text-align: center;
   margin-top: 0;
+  animation: up 0.2s ease-out;
+  animation-iteration-count: 1;
 }
 .movies-container {
   margin: auto;

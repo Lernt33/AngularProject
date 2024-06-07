@@ -2,7 +2,7 @@
 @if (list){
 <div class="shorter-container">
   @for (element of list;track list){
-    <a class="container-element" [routerLink]="element[1]">{{+ !element[0].includes(':')? element[0] : element[0].split(':')[1] }}  </a><span class="shorter-devider"> / </span>
+    <a class="container-element" routerLink="/movie/{{$index}}">{{+ !element[0].includes(':')? element[0] : element[0].split(':')[1] }}  </a><span class="shorter-devider"> / </span>
   }
 </div>
 }

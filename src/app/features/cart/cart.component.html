@@ -1,0 +1,28 @@
+<h1 class="home-header">Tickets</h1>
+<table class="example-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Date</th>
+    <th>Time</th>
+    <th>Lang</th>
+    <th>Price</th>
+    <th>Action</th> <!-- Add a new column for the remove button -->
+  </tr>
+  </thead>
+  <tbody>
+    @for (item of tService.ticketsValue$;track item){
+    <tr>
+      <td>{{item.name}} </td>
+      <td>{{item.date | date}} </td>
+      <td>{{item.time}}</td>
+      <td>{{item.lang}}</td>
+      <td>{{item.prices[0]}}ლ / {{item.prices[1]}} ლ</td>
+      <td>
+        <!-- Add a button to remove the item -->
+        <button (click)="removeFromCart($index)">Remove</button>
+      </td>
+    </tr>
+    }
+  </tbody>
+</table>

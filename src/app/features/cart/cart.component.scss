@@ -1,0 +1,87 @@
+@import "@app-style-var";
+.home-header {
+  font-family: $primary-font;
+  font-size: 200px;
+  @media screen and (max-width: 1280px) {
+    font-size: 128px;
+  }
+  @media screen and (max-width: 850px) {
+    font-size: 15vw;
+  }
+  color: rgb(224, 222, 222);
+  font-weight: 1000;
+  text-align: center;
+  margin-top: 0;
+  animation: up 0.2s ease-out;
+  animation-iteration-count: 1;
+}
+
+@mixin half-transparent {
+  opacity: 0.5;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+  th {
+    font-family: $primary-font;
+    background-color: $purple-color;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+
+  td {
+    font-family: $secondary-font;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+  }
+
+}
+button {
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  background-color: crimson;
+  color: white;
+  font-family: $primary-font;
+  border: 0px;
+  font-size: 16px;
+  font-weight: 1000;
+  padding: 4px 16px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 111px;
+  cursor: pointer;
+  &:hover {
+    background-color: darken(crimson, 10%);
+  }}
+.example-table {
+  @extend .table;
+}
+@media screen and (max-width: 400px) {
+  button {
+    max-width: 72px;
+    height: 36px;
+    font-size: 12px;
+  }
+  .home-header {
+    font-size: 10vw;
+  }
+  .table {
+    th,
+    td {
+      padding: 6px;
+      font-size: 12px;
+    }
+  }
+
+  .example-table {
+    width: 100%;
+    max-width: none;
+  }
+}

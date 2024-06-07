@@ -1,13 +1,42 @@
 @import "@app-style-var";
+.home-header {
+  animation: up 0.2s ease-out;
+  animation-iteration-count: 1;
+  font-family: $primary-font;
+  font-size: 200px;
+  @media screen and (max-width: 1280px) {
+    font-size: 128px;
+  }
+  @media screen and (max-width: 850px) {
+    font-size: 15vw;
+  }
+  color: rgb(224, 222, 222);
+  font-weight: 1000;
+  text-align: center;
+  margin: 0;
+  transform: translate(0, +25%);
+  @media screen and (max-width: 1640px) {
+    transform: translate(0, +15%);
+  }
+  @media screen and (max-width: 1251px) {
+    transform: translate(0, +8%);
+  }
+  @media screen and (max-width: 871px) {
+    transform: translate(0, +16vw);
+  }
+  z-index: 0;
+}
 
 main {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 65vh;
   height: 100%;
   .quote-button {
-    margin: 16px 0px;
+    z-index: 1;
+    margin: 16px 0px 0px;
     height: 43px;
     box-sizing: border-box;
     background-color: $purple-color;
@@ -21,5 +50,12 @@ main {
     width: 100%;
     max-width: 111px;
     cursor: pointer;
+  }
+  .reset-button{
+    background-color: crimson;
+    padding: 4px 16px;
+    height: 36px;
+    width: 100%;
+    max-width: 90px;
   }
 }

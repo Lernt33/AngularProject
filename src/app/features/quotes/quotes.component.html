@@ -1,5 +1,7 @@
+<h1 class="home-header">quotes</h1>
 <main>
   <button class="quote-button" (click)="RandomQuote()">Add</button>
+  <button class="quote-button reset-button" (click)="Reset()">Reset</button>
   <div>  @for (item of QuotesToDisplay; track item) {
     <app-quote-card
       [quote]="item.quote"

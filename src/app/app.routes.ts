@@ -3,6 +3,7 @@ import {Routes} from '@angular/router';
 import {HomeComponent} from './features/home/home.component';
 import {QuotesComponent} from "./features/quotes/quotes.component";
 import {MoviePageComponent} from "./features/movie-page/movie-page.component";
+import {CartComponent} from "./features/cart/cart.component";
 
 export const routes: Routes = [
   {
@@ -27,6 +28,11 @@ export const routes: Routes = [
     title: 'Contact',
   },
   {path: 'movie/:id', component: MoviePageComponent},
+  {
+    path: 'cart',
+    component:CartComponent,
+    title: 'Cart'
+  },
   {
     path: '404',
     loadComponent: () => import('./features/not-found/not-found.component'),
