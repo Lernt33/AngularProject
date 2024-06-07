@@ -39,7 +39,7 @@ export class MoviePageComponent implements OnInit {
     if (!this.movie) {
       this.router.navigate(['404'])
     }
-    // console.log(this.movie)
+    console.log(this.movie)
   }
 
   OnReserveClick(item: any, moviename: string) {

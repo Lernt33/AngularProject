@@ -10,7 +10,7 @@
     <th>Time</th>
     <th>Lang</th>
     <th>Price</th>
-    <th>Action</th> <!-- Add a new column for the remove button -->
+    <th>Action</th>
   </tr>
   </thead>
   <tbody>
@@ -22,7 +22,6 @@
         <td>{{ item.lang }}</td>
         <td>{{ item.prices[0] }}ლ / {{ item.prices[1] }} ლ</td>
         <td>
-          <!-- Add a button to remove the item -->
           <button (click)="removeFromCart($index)">Remove</button>
         </td>
       </tr>

@@ -102,7 +102,7 @@
   </div>
   <div class="sidebar" [class.sactive]="sidebaropened">
     <ul>
-      <li><a routerLinkActive="purple" routerLink="">Releases</a></li>
+      <li><a routerLinkActive="purple" [routerLinkActiveOptions]="{ exact: true }" routerLink="">Releases</a></li>
       <li><a routerLinkActive="purple" routerLink="shorter">Shorter</a></li>
       <li><a routerLinkActive="purple" routerLink="quotes">Quotes</a></li>
       <li><a routerLinkActive="purple" routerLink="contact">Contact</a></li>

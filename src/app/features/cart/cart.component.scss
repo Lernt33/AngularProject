@@ -4,6 +4,7 @@
   justify-content: center;
   margin-bottom: 16px;
 .buy-all {
+  font-family: $secondary-font;
   margin: auto;
   text-align: center;
   width: fit-content;
@@ -39,7 +40,7 @@
   margin-bottom: 16px;
 
   th {
-    font-family: $primary-font;
+    font-family: $secondary-font;
     background-color: $purple-color;
     color: white;
     padding: 10px;
@@ -63,10 +64,10 @@ button {
   transition: background-color 0.3s ease;
   background-color: crimson;
   color: white;
-  font-family: $primary-font;
+  font-family: $secondary-font;
   border: 0px;
   font-size: 16px;
-  font-weight: 1000;
+  font-weight: 700;
   padding: 4px 16px;
   box-sizing: border-box;
   width: 100%;

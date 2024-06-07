@@ -27,7 +27,9 @@ export const routes: Routes = [
     loadComponent: () => import('./features/contact/contact.component'),
     title: 'Contact',
   },
-  {path: 'movie/:id', component: MoviePageComponent},
+  {path: 'movie/:id',
+    component: MoviePageComponent,
+    title:'movie'},
   {
     path: 'cart',
     component:CartComponent,

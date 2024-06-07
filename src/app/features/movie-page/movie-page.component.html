@@ -1,6 +1,6 @@
 <h1 class="home-header">movie</h1>
 @if (movie) {
-  <div class="main-container">
+  <div autoscroll="true" class="main-container">
     <h1 class="title-header">{{ movie.name }}</h1>
     <img [src]="movie.poster">
     <iframe
@@ -23,7 +23,7 @@
           </tr>
           @for (item2 of item.sessions; track item2) {
             <tr>
-              <td>{{ item2.id.split('/')[1] | date}}</td>
+              <td>{{ item2.id.split('/')[1] |  date: 'dd/MM/yyyy' | date}}</td>
               <td>{{ item2.id.split('/')[2] }}</td>
               <td>{{ item2.lang }}</td>
               <td>{{ item2.prices[0] }}ლ / {{ item2.prices[1] }}ლ</td>
