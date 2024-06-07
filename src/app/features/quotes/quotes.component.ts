@@ -32,19 +32,13 @@ export class QuotesComponent implements OnInit {
   }
 
   RandomQuote() {
-    if (this.Usednumber.length !== this.ALLquotes.length) {
       let rNumber: number;
-      do {
-        rNumber = Math.floor(Math.random() * this.ALLquotes.length);
-      } while (this.Usednumber.includes(rNumber));
+      rNumber = Math.floor(Math.random() * this.ALLquotes.length);
 
       this.Usednumber.push(rNumber);
       this.QuotesToDisplay.unshift(this.ALLquotes[rNumber]);
       this.saveQuotesToLocalStorage();
-      // console.log(this.QuotesToDisplay);
-    } else {
-      this.alert.fs_Alert('List is full', "error");
-    }
+
   }
 
   private saveQuotesToLocalStorage() {

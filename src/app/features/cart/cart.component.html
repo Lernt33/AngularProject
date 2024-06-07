@@ -1,4 +1,7 @@
 <h1 class="home-header">Tickets</h1>
+<div class="center-container">
+  <button class="buy-all">Buy All</button>
+</div>
 <table class="example-table">
   <thead>
   <tr>
@@ -11,18 +14,18 @@
   </tr>
   </thead>
   <tbody>
-    @for (item of tService.ticketsValue$;track item){
-    <tr>
-      <td>{{item.name}} </td>
-      <td>{{item.date | date}} </td>
-      <td>{{item.time}}</td>
-      <td>{{item.lang}}</td>
-      <td>{{item.prices[0]}}ლ / {{item.prices[1]}} ლ</td>
-      <td>
-        <!-- Add a button to remove the item -->
-        <button (click)="removeFromCart($index)">Remove</button>
-      </td>
-    </tr>
+    @for (item of tService.ticketsValue$; track item) {
+      <tr>
+        <td>{{ item.name }}</td>
+        <td>{{ item.date | date }}</td>
+        <td>{{ item.time }}</td>
+        <td>{{ item.lang }}</td>
+        <td>{{ item.prices[0] }}ლ / {{ item.prices[1] }} ლ</td>
+        <td>
+          <!-- Add a button to remove the item -->
+          <button (click)="removeFromCart($index)">Remove</button>
+        </td>
+      </tr>
     }
   </tbody>
 </table>

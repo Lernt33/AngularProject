@@ -1,4 +1,17 @@
 @import "@app-style-var";
+.center-container{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+.buy-all {
+  margin: auto;
+  text-align: center;
+  width: fit-content;
+  background-color: green;
+  height: 100%;
+  scale: 1.3;
+}
+}
 .home-header {
   font-family: $primary-font;
   font-size: 200px;
@@ -24,6 +37,7 @@
   width: 100%;
   border-collapse: collapse;
   margin-bottom: 16px;
+
   th {
     font-family: $primary-font;
     background-color: $purple-color;
@@ -40,6 +54,7 @@
   }
 
 }
+
 button {
   color: white;
   border: none;
@@ -57,12 +72,16 @@ button {
   width: 100%;
   max-width: 111px;
   cursor: pointer;
+
   &:hover {
     background-color: darken(crimson, 10%);
-  }}
+  }
+}
+
 .example-table {
   @extend .table;
 }
+
 @media screen and (max-width: 400px) {
   button {
     max-width: 72px;
